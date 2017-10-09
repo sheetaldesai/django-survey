@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Random Word Generator</title>
+    {% load static %}
+    <!-- The line above tells Django to be ready to listen for static files -->
+    <link rel="stylesheet" href="{% static 'surveys/css/main.css' %}" media="screen" title="no title"  charset="utf-8">
+</head>
+<body>
+    <div id="container">
+        <form action="/process/" method="post" id="processForm">
+            {% csrf_token %}
+            <div>
+                <label for="name">Your Name</label>
+                <input type="text" name="name">
+            </div>
+            <div>
+                <label for="dojoLocation">Dojo Location</label>
+                <select name="dojoLocation" id="">
+                    <option name="sj">San Jose</option>
+                    <option name="seattle">Seattel</option>
+                    <option name="dallas">Dallas</option>
+                    <option name="newYork">New York</option>
+                </select>
+            </div>
+            <div>
+                <label for="language">Favorite Language</label>
+                <select name="language" id="">
+                    <option name="js">JavaScript</option>
+                    <option name="python">Python</option>
+                    <option name="c#">C#</option>
+                    <option name="java">Java</option>
+                </select>
+            </div>
+            <div>
+                <label for="comments">Comments (Optional)</label>
+                <textarea name = "comments" rows="4" cols="50"></textarea>
+            </div>
+            <div id="submitDiv">
+                <input type="submit" name="submit" id="" value="Submit">
+            </div>
+        </form>
+    </div>
+</body>
+</html>
