@@ -19,7 +19,7 @@ def process (request) :
         request.session["language"] = request.POST["language"]
         request.session["comments"] = request.POST["comments"]
         print request.session
-    return redirect ('/result')
+    return redirect ('/survey/result')
 
 def result (request) :
     return render(request, 'surveys/surveyResult.html')
